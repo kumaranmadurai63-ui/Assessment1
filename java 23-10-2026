@@ -1,0 +1,111 @@
+1. Primitive and Non-Primitive Data Types in Java
+
+Primitive data types store simple values directly. Java has eight primitive data types:
+
+- byte,short,int,long — integer values
+-float,double — decimal values
+-char — a single character
+`boolean —true or false
+
+Non-primitive data types are reference types that refer to objects or arrays. Examples include String, arrays, classes, and interfaces.
+
+java
+
+int age = 21;                  
+char grade = 'A';               
+String name = "Anu";            
+int[] marks = {80, 90, 75};     
+
+
+Main difference: Primitive variables contain primitive values, while reference variables contain references to objects or arrays. A reference can also be null.
+
+ 2. Internal Workflow of a Java Program
+
+The Java program passes through these steps before producing output:
+
+1. Source Code
+
+Hello.java
+
+2. Java Compiler (javac)
+
+Compiles source code into bytecode
+
+3. Bytecode
+
+Hello.class
+
+4. JVM
+
+Class loading, verification and execution
+
+5. Program Output
+
+Interpreter and JIT work together during execution
+
+Example:
+
+java
+
+class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+
+
+Compile and run:
+
+bash
+javac Hello.java
+java Hello
+
+
+Output:
+
+Hello, Java!
+
+ 3. What are JDK, JRE, and JVM?
+
+| Component | Meaning | Main purpose |
+| --- | --- | --- |
+| JDK | Java Development Kit | Develop, compile, and run Java programs |
+| JRE | Java Runtime Environment | Provides the runtime environment and libraries |
+| JVM | Java Virtual Machine | Loads and executes Java bytecode |
+
+Remember:
+
+=> JDK is used for development.
+=> JRE is the traditional runtime environment.
+=> JVM executes bytecode.
+
+Note: Modern Java versions do not always provide a separate JRE download.
+
+ 4. What is a JIT Compiler?
+
+JIT stands for Just-In-Time compiler.
+
+It is a component of the JVM that compiles frequently executed bytecode into native machine code while the program is running.
+
+How it improves performance:
+
+1. The JVM starts executing bytecode.
+2. It identifies frequently executed code.
+3. The JIT compiler converts suitable code into native machine code.
+4. The JVM can reuse the compiled code, reducing repeated interpretation.
+
+Example: A loop that runs thousands of times may benefit from JIT compilation because its compiled machine code can execute more efficiently.
+
+JIT compilation has an initial cost, so the performance benefit depends on the program and workload.
+
+ 5. Relationship Between JDK, JRE, JVM, and JIT
+
+These components work together as follows:
+
+=> JDK: Provides tools such as javac for compiling Java source code.
+ JRE: Traditionally provides the JVM and supporting libraries required to run Java applications.
+ =>JVM: Loads, verifies, and executes bytecode.
+=>JIT: Works within the JVM to compile frequently executed code into native machine code.
+
+
+The interpreter and JIT are execution mechanisms within the JVM; they are not two separate required stages that every instruction must pass through.
